@@ -1,0 +1,35 @@
+### Login (save cookie in your API client)
+POST http://127.0.0.1:8000/login
+Content-Type: application/json
+
+{"username":"admin","password":"REPLACE_WITH_YOUR_PASSWORD"}
+
+### Create branch (admin only)
+POST http://127.0.0.1:8000/branches
+Content-Type: application/json
+
+{"name":"Lusaka Main Branch","location":"Lusaka"}
+
+### Create a loan officer (replace branch ID)
+POST http://127.0.0.1:8000/users
+Content-Type: application/json
+
+{"username":"officer01","full_name":"Example Officer","password":"ChangeThisPassword123!","role":"loan_officer","branch_ids":[1]}
+
+### Create a customer
+POST http://127.0.0.1:8000/customers
+Content-Type: application/json
+
+{"customer_code":"CUST-0001","full_name":"Example Customer","phone":"0970000000","address":"Lusaka","employer":"Example Employer","branch_id":1}
+
+### Create a loan (all monetary fields in kwacha)
+POST http://127.0.0.1:8000/loans
+Content-Type: application/json
+
+{"loan_code":"LN-0001","customer_id":1,"branch_id":1,"principal_kwacha":1000,"interest_kwacha":250,"fee_kwacha":50,"due_date":"2026-11-30"}
+
+### Record a payment
+POST http://127.0.0.1:8000/loans/1/payments
+Content-Type: application/json
+
+{"amount_kwacha":100,"method":"mobile_money","reference":"TXN12345","note":"First instalment"}

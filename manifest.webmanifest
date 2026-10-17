@@ -1,0 +1,18 @@
+{
+  "name": "Best View Money Lenders Ltd Management System",
+  "short_name": "Best View",
+  "description": "Secure multi-branch loan and payment management",
+  "start_url": "/app",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f5f7fa",
+  "theme_color": "#171b22",
+  "icons": [
+    {
+      "src": "/static/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
